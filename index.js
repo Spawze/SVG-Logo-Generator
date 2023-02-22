@@ -2,7 +2,7 @@ const fs = require('fs')
 const inquirer = require('inquirer')
 const { Circle, Square, Triangle } = require("./lib/shapes.js")
 const validateColor = require('./lib/validateColor.js')
-const outputFile = './output/newSVG.svg'
+const outputFile = './output/logo.svg'
 const questions = [
     {
         type: "list",
@@ -53,7 +53,7 @@ function generateSVG(answer) {
     }
     fs.writeFile(outputFile, svg.render(), err => {
         if (err) { console.log("Something went wrong :(") }
-        else { console.log("Success! Check the output folder for newSVG.svg!") }
+        else { console.log("Generated logo.svg in the output folder.") }
     })
 }
 
